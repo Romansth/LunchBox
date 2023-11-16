@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">LunchBox</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string-array name="price_filter_options">
+        <item>Price</item>
+        <item>$</item>
+        <item>$$</item>
+        <item>$$$</item>
+    </string-array>
+    <string name="distance_hint">Max distance (miles)</string>
+    <string name="search_hint">Search</string>
+    <string name="prox_sort_label">Proximity</string>
+    <string name="rate_sort_label">Rating</string>
+    <string name="search_button_label">Search</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <string name="rest_name">Restaurant Name</string>
+    <string name="rest_rating">0.0</string>
+    <string name="rest_price">$$$</string>
+    <string name="address">Address Unknown</string>
+    <string name="reviews_label">Reviews</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_lunchbox">Welcome to LunchBox!!</string>
+    <string name="sort_label">Sort by</string>
+    <string name="no_results_message">Sorry, no restaurants match the given criteria</string>
+    <string name="navigateToPostReview_button_label">Add Review</string>
+
+    <string name="add_review_heading">Add Review</string>
+    <string name="rating_label">Rating</string>
+    <string name="review_label">Review</string>
+    <string name="comment_hint">Enter your review here</string>
+    <string name="price_symbol_label">Price Symbol</string>
+    <string name="add_review_button">Add Review</string>
+
+    <string name="add_restaurant_heading">Add Restaurant</string>
+    <string name="restaurant_name_label">Restaurant Name</string>
+    <string name="enter_restaurant_name">Enter restaurant name</string>
+    <string name="address_label">Address</string>
+    <string name="enter_address">Enter address</string>
+    <string name="city_state_label">City, State</string>
+    <string name="country_postalcode_label">Country, Postal Code</string>
+    <string name="enter_city">Enter City</string>
+    <string name="enter_state">Enter State</string>
+    <string name="enter_country">Enter Country</string>
+    <string name="enter_postalcode">Enter Postal Code</string>
+    <string name="latitude_longitude_label">Latitude, Longitude</string>
+    <string name="enter_latitude">Enter Latitude</string>
+    <string name="enter_longitude">Enter Longitude</string>
+    <string name="add_restaurant_button">Add Restaurant</string>
+
+</resources>
