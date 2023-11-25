@@ -5,7 +5,7 @@ import {Review, Restaurant} from './models/index.js';
 
 dotenv.config();
 
-await Review.sync({alter: true});
+// await Review.sync({alter: true});
 
 const port = process.env.PORT || 8000;
 
@@ -14,7 +14,7 @@ testDbConnection();
 
 const startServer = async () => {
 
-  Review.sync({ alter: true })
+  // Review.sync({ alter: true })
   
   try {
     
