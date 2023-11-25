@@ -18,7 +18,7 @@ const Restaurant = sequelize.define('restaurant', {
   state: DataTypes.STRING,
   country: DataTypes.STRING,
   postalcode: DataTypes.STRING,
-  coordinates: DataTypes.GEOMETRY('POINT'),
+  //coordinates: DataTypes.GEOMETRY('POINT'),
   stars: DataTypes.DOUBLE,
   pricerange: DataTypes.INTEGER,
   cuisine: DataTypes.STRING,
@@ -28,7 +28,8 @@ const Restaurant = sequelize.define('restaurant', {
   // }
 },
 {
-  timestamps:false
+  timestamps: false,
+  tableName: 'restaurants'
 }
 );
 

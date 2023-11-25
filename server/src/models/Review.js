@@ -14,11 +14,10 @@ const Review = sequelize.define('Review', {
     type: DataTypes.STRING,
     // allowNull: false,
     references: {
-      model: 'Users', // Name of the Users model
+      model: 'users', // Name of the Users model
       key: 'firebaseUid', // Key in Users to which it refers
     }
   },
-  username: DataTypes.STRING,
   restaurantid: {
     type: DataTypes.INTEGER,
     allowNull: false,

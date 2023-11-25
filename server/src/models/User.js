@@ -21,7 +21,13 @@ const User = sequelize.define('User', {
     dateJoined: {
       type: DataTypes.DATE,
       defaultValue: sequelize.NOW
-    }
-  });
+    },
+  },
+  {
+    timestamps: false,
+    tableName: 'users'
+  }
+  
+  );
   
   export default User;

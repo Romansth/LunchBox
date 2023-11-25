@@ -3,14 +3,15 @@ import { sequelize } from '../config/db.js';
 
 export default class ReviewsDAO {
   
-  static async addReview(restaurantId, userName, userId, reviewText, date) {
+  static async addReview(restaurantId, userId, comment, price, rating, date) {
     try {
       const reviewDoc = {
-        username: userName,
-        userid: userId,
+        restaurantid: restaurantId,
+        firebaseUid: userId,
+        comment: comment,
+        price: price,
+        rating: rating,
         date: date,
-        comment: reviewText,
-        restaurantid: restaurantId
       };
       
       return await Review.create(reviewDoc);
@@ -20,11 +21,16 @@ export default class ReviewsDAO {
     }
   }
 
-  static async updateReview(reviewId, userId, text, date) {
+  static async updateReview(reviewId, userId, comment, price, rating, date) {
     try {
       const updateResponse = await Review.update(
-        { comment: text, date: date },
-        { where: { reviewid: reviewId, userid: userId } }
+        { 
+          comment: comment,
+          price: price,
+          rating: rating,
+          date: date,
+        },
+        { where: { reviewid: reviewId, firebaseUid: userId } }
       );
 
       return updateResponse;
@@ -37,7 +43,7 @@ export default class ReviewsDAO {
   static async deleteReview(reviewId, userId) {
     try {
       const deleteResponse = await Review.destroy({
-        where: { reviewid: reviewId, userid: userId }
+        where: { reviewid: reviewId, firebaseUid: userId }
       });
 
       return deleteResponse;
