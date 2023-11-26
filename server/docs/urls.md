@@ -10,8 +10,9 @@ example urls are assuming a port of 5000
         - zipcode
             - example http://localhost:5000/api/v1/restaurants?zipcode=10101
         - cuisine
-            - example http://localhost:5000/api/v1/restaurants?cuisine=India
+            - example http://localhost:5000/api/v1/restaurants?cuisine=Indian
         - page
+            - currently starts from 0
             - http://localhost:5000/api/v1/restaurants?page=2
         - location
             - http://localhost:5000/api/v1/restaurants?lat=40.6937056&lng=-73.99219&max_distance=1
@@ -21,7 +22,7 @@ example urls are assuming a port of 5000
     - with no parameters, it returns a homepage of the first 20 restaurants in the `restaurants` table
         - example http://localhost:5000/api/v1/restaurants
     - with full parameters
-        - http://localhost:5000/api/v1/restaurants?name=cafe&zipcode=10012&cuisine=India&page=3
+        - http://localhost:5000/api/v1/restaurants?name=cafe&zipcode=10012&cuisine=Indian&page=3
     - calls RestaurantCtrl.apiGetRestaurants
 
 
@@ -29,7 +30,8 @@ example urls are assuming a port of 5000
     - type: GET
     - gets the reviews of a restaurant
     - calls RestaurantCtrl.apiGetRestaurantById
-    - example http://localhost:5000/api/v1/restaurants/id/5eb3d668b31de5d588f42a35
+    - example http://localhost:5000/api/v1/restaurants/id/5eb3d668b31de5d588f42a35 (should handle exceptions)
+    - example http://localhost:5000/api/v1/restaurants/id/100
 
 
 - **/cuisines**
@@ -45,10 +47,9 @@ example urls are assuming a port of 5000
         - body takes an object with the fields as shown in the example below
         - ```
             {
-             "restaurant_id": "5eb3d668b31de5d588f4292a",
-            "text": "Always love the food here",
-            "user_id": "6969",
-            "name": "Messi"
+             "restaurant_id": "100",
+            "text": "Loved the food here",
+            "user_id": "firebaseuid1"
             }
             ```
         - adds a document to the reviews collection (which it creates if it doesn't exist) 

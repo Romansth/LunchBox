@@ -13,13 +13,10 @@ const port = process.env.PORT || 8000;
 testDbConnection();
 
 const startServer = async () => {
-
-  Review.sync({ alter: true })
   
   try {
     
     await sequelize.sync();
-    Review.sync({ alter: true })
     
     console.log('Database synced successfully.');
 
@@ -33,4 +30,3 @@ const startServer = async () => {
 };
 
 startServer();
-
