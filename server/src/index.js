@@ -19,7 +19,6 @@ const startServer = async () => {
   try {
     
     await sequelize.sync();
-    Review.sync({ alter: true })
     
     console.log('Database synced successfully.');
 
@@ -33,4 +32,3 @@ const startServer = async () => {
 };
 
 startServer();
-
