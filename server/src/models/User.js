@@ -13,21 +13,21 @@ const User = sequelize.define('User', {
       unique: true,
       allowNull: false
     },
+    name: {
+      type: DataTypes.STRING,
+      unique: false,
+      allowNull: true
+    },
     email: {
       type: DataTypes.STRING,
       unique: true,
       allowNull: false
     },
-    dateJoined: {
-      type: DataTypes.DATE,
-      defaultValue: sequelize.NOW
-    },
   },
   {
-    timestamps: false,
+    createdAt: true,
+    updatedAt: false,
     tableName: 'users'
-  }
-  
-  );
+  });
   
   export default User;

@@ -1,7 +1,8 @@
 import dotenv from 'dotenv';
 import { sequelize, testDbConnection } from './config/db.js';
 import app from './server.js';
-import {Review, Restaurant} from './models/index.js';
+// import {Review, Restaurant} from './models/index.js';
+import {User} from './models/index.js';
 
 dotenv.config();
 
@@ -17,7 +18,6 @@ const startServer = async () => {
   // Review.sync({ alter: true })
   
   try {
-    
     await sequelize.sync();
     
     console.log('Database synced successfully.');
