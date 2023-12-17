@@ -2,6 +2,26 @@ import Review from '../models/Review.js';
 import { sequelize } from '../config/db.js';
 
 export default class ReviewsDAO {
+
+  static async getReviewsByUserId(userid){
+    try {
+        const review = await Review.findAll({where: {firebaseUid: userid}})
+        return review;
+      } catch (e) {
+        console.error(`Something went wrong in getReviewsByUserID: ${e}`);
+        throw e;
+      }
+}
+
+static async getReviewsByRestaurantId(restaurantid){
+  try {
+      const review = await Review.findAll({where: {restaurantid: restaurantid}})
+      return review;
+    } catch (e) {
+      console.error(`Something went wrong in getReviewsByUserID: ${e}`);
+      throw e;
+    }
+}
   
   static async addReview(restaurantId, userId, comment, price, rating, date) {
     try {
