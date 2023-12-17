@@ -1,6 +1,37 @@
 import ReviewsDAO from "../dao/reviewsDAO.js";
 
 export default class ReviewsController {
+
+  static async apiReviewsByUserId(req, res, next) {
+    try {
+      let userid = req.params.id || {};
+      let review = await ReviewsDAO.getReviewsByUserId(userid);
+      if (!review) {
+        res.status(404).json({ error: "Not found" });
+        return;
+      }
+      res.json(review);
+    } catch(e) {
+      console.log(`api, ${e}`);
+      res.status(500).json({ error: e });
+    }
+  }
+
+  static async apiReviewsByRestuarantId(req, res, next) {
+    try {
+      let restaurantid = req.params.id || {};
+      let review = await ReviewsDAO.getReviewsByRestaurantId(restaurantid);
+      if (!review) {
+        res.status(404).json({ error: "Not found" });
+        return;
+      }
+      res.json(review);
+    } catch(e) {
+      console.log(`api, ${e}`);
+      res.status(500).json({ error: e });
+    }
+  }
+
   static async apiPostReview(req, res, next) {
     try {
       const restaurantId = req.body.restaurant_id;

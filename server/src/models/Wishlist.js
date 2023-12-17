@@ -3,9 +3,9 @@ import { sequelize } from '../config/db.js';
 import Restaurant from './Restaurant.js';
 import User from './User.js';
 
-const Review = sequelize.define('Review', {
+const Wishlist = sequelize.define('Wishlist', {
 
-  reviewid: {
+  wishid: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
@@ -27,17 +27,16 @@ const Review = sequelize.define('Review', {
       key: 'restaurantid',
     }
   },
-  rating: DataTypes.FLOAT,
   date: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW
   },
-  comment: DataTypes.TEXT,
-  price: DataTypes.INTEGER
+  cuisine: DataTypes.TEXT,
+  priority: DataTypes.TEXT
 }, {
   timestamps: false,
-  tableName: 'reviews'
+  tableName: 'wishlists'
 });
 
 
-export default Review;
+export default Wishlist;
