@@ -1,17 +1,13 @@
 import express from "express"
 import RestaurantsCtrl from "../restaurants.controller.js"
-import ReviewsCtrl from "../reviews.controller.js"
 
 const router = express.Router()
-
+router.route("/").post(RestaurantsCtrl.apiPostRestaurant)
 router.route("/").get(RestaurantsCtrl.apiGetRestaurants)
+router.route("/").put(RestaurantsCtrl.apiUpdateRestaurant)
+router.route("/").delete(RestaurantsCtrl.apiDeleteRestaurant)
+router.route("/geotest").post(RestaurantsCtrl.apiGetPostRestaurantByLocation)
 router.route("/id/:id").get(RestaurantsCtrl.apiGetRestaurantById)
 router.route("/cuisines").get(RestaurantsCtrl.apiGetRestaurantCuisines)
-
-router
-  .route("/review")
-  .post(ReviewsCtrl.apiPostReview)
-  .put(ReviewsCtrl.apiUpdateReview)
-  .delete(ReviewsCtrl.apiDeleteReview)
 
 export default router 

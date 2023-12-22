@@ -8,7 +8,6 @@ const Restaurant = sequelize.define('restaurant', {
     autoIncrement: true,
     unique: true
   },
-  foreignresid: DataTypes.STRING,
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -22,6 +21,9 @@ const Restaurant = sequelize.define('restaurant', {
   stars: DataTypes.DOUBLE,
   pricerange: DataTypes.INTEGER,
   cuisine: DataTypes.STRING,
+  geoHash: DataTypes.STRING,
+  latitude: DataTypes.STRING,
+  longitude: DataTypes.STRING
   // namesearchvector: {
   //   type: DataTypes.TSVECTOR,
   //   allowNull: true
