@@ -4,6 +4,7 @@ import restaurants from "./api/routes/restaurants.route.js"
 import social from "./api/routes/social.route.js"
 import wishlist from "./api/routes/wishlists.route.js"
 import reviews from "./api/routes/reviews.route.js"
+import users from "./api/routes/users.route.js"
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.use("/api/v1/restaurants", restaurants)
 app.use("/api/v1/social", social)
 app.use("/api/v1/wishlists", wishlist)
 app.use("/api/v1/reviews", reviews)
+app.use("/api/v1/users", users)
 app.use("*", (req, res) => res.status(404).json({ error: "not found"}))
 
 export default app
